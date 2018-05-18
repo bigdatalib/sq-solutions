@@ -4,7 +4,7 @@ author: "1"
 date: 2018-03-22T23:41:14-05:00
 draft: false
 categories: ["R"]
-tags: ["R Markdown", "blogdown", "#rstats"]
+tags: ["R Markdown", "blogdown", "#rstats","test"]
 thumbnailImagePosition: left
 thumbnailImage: ./images/logo.png
 metaAlignment: center
