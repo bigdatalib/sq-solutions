@@ -2,41 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on A Hugo website</title>
-    <link>/sq-solutions/tags/</link>
+    <link>https://bigdatalib.github.io/sq-solutions/tags/</link>
     <description>Recent content in Tags on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Mar 2018 23:41:14 -0500</lastBuildDate>
     
-	<atom:link href="/sq-solutions/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bigdatalib.github.io/sq-solutions/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>#Rstats</title>
-      <link>/sq-solutions/tags/#rstats/</link>
-      <pubDate>Thu, 22 Mar 2018 23:41:14 -0500</pubDate>
-      
-      <guid>/sq-solutions/tags/#rstats/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blogdown</title>
-      <link>/sq-solutions/tags/blogdown/</link>
-      <pubDate>Thu, 22 Mar 2018 23:41:14 -0500</pubDate>
-      
-      <guid>/sq-solutions/tags/blogdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Markdown</title>
-      <link>/sq-solutions/tags/r-markdown/</link>
-      <pubDate>Thu, 22 Mar 2018 23:41:14 -0500</pubDate>
-      
-      <guid>/sq-solutions/tags/r-markdown/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
