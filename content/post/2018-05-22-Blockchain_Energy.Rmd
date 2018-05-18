@@ -1,0 +1,19 @@
+---
+title: "Blockchain in Energy"
+author: "Nima Safaian"
+date: 2018-05-22T23:41:14-05:00
+draft: false
+categories: ["R"]
+tags: ["blockchain", "energy","trading"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/logo.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+---
+
+## To be completed.... 
