@@ -16,6 +16,9 @@ output:
     css: "/css/my-style.css"
 ---
 
+# Data Science in Energy Trading and Risk Management
+
+
 <!DOCTYPE html>
 <html>
 <body>
