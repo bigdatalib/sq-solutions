@@ -2,21 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>A Hugo website</title>
-    <link>https://bigdatalib.github.io/sq-solutions/</link>
+    <link>/sq-solutions/</link>
     <description>Recent content on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 May 2016 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jun 2018 23:41:14 -0500</lastBuildDate>
     
-	<atom:link href="https://bigdatalib.github.io/sq-solutions/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/sq-solutions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Blockchain in Energy Trading</title>
+      <link>/sq-solutions/2018/06/22/blockchain-in-energy-trading/</link>
+      <pubDate>Fri, 22 Jun 2018 23:41:14 -0500</pubDate>
+      
+      <guid>/sq-solutions/2018/06/22/blockchain-in-energy-trading/</guid>
+      <description>Blockchain Chain in Energy Trading  </description>
+    </item>
+    
+    <item>
+      <title>Data Science in Trading</title>
+      <link>/sq-solutions/2018/06/22/data-science-in-trading/</link>
+      <pubDate>Fri, 22 Jun 2018 23:41:14 -0500</pubDate>
+      
+      <guid>/sq-solutions/2018/06/22/data-science-in-trading/</guid>
+      <description>Data Science in Energy Trading and Risk Management     Episode 1   Data Science, Trading and Startup Methods Walk into a Bar    Your browser does not support the audio element.        </description>
+    </item>
+    
+    <item>
       <title>About</title>
-      <link>https://bigdatalib.github.io/sq-solutions/about/</link>
+      <link>/sq-solutions/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/about/</guid>
+      <guid>/sq-solutions/about/</guid>
       <description>My name is Nima Safaian, financial professional, data scientist, and corporate entrepreneur. My passion is to help companies turn data and technology, into a strategic value driver. This is my blog, where I share my ideas and experiences with those interested. Please contact me via email at: nima.safaian@sq-solutions.com if you want to further explore oppertunities.</description>
     </item>
     
