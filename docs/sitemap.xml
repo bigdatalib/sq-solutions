@@ -18,12 +18,6 @@
   </url>
   
   <url>
-    <loc>/sq-solutions/</loc>
-    <lastmod>2018-06-22T23:41:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/sq-solutions/tags/blockchain/</loc>
     <lastmod>2018-06-22T23:41:14-05:00</lastmod>
     <priority>0</priority>
@@ -48,6 +42,12 @@
   
   <url>
     <loc>/sq-solutions/categories/r/</loc>
+    <lastmod>2018-06-22T23:41:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/sq-solutions/</loc>
     <lastmod>2018-06-22T23:41:14-05:00</lastmod>
     <priority>0</priority>
   </url>
