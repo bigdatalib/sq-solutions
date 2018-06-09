@@ -6,18 +6,27 @@
     <description>Recent content in Blockchain on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 May 2018 23:41:14 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jun 2018 23:41:14 -0500</lastBuildDate>
     
 	<atom:link href="/sq-solutions/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Blockchain in Energy</title>
-      <link>/sq-solutions/2018/05/22/blockchain-in-energy/</link>
-      <pubDate>Tue, 22 May 2018 23:41:14 -0500</pubDate>
+      <title>Data Science in Trading</title>
+      <link>/sq-solutions/2018/06/22/data-science-in-trading/</link>
+      <pubDate>Fri, 22 Jun 2018 23:41:14 -0500</pubDate>
       
-      <guid>/sq-solutions/2018/05/22/blockchain-in-energy/</guid>
-      <description>To be completed….  </description>
+      <guid>/sq-solutions/2018/06/22/data-science-in-trading/</guid>
+      <description>    Episode 1   Data Science, Trading and Startup Methods Walk into a Bar    Your browser does not support the audio element.       </description>
+    </item>
+    
+    <item>
+      <title>Data Science in Trading</title>
+      <link>/sq-solutions/2018/06/22/data-science-in-trading/</link>
+      <pubDate>Fri, 22 Jun 2018 23:41:14 -0500</pubDate>
+      
+      <guid>/sq-solutions/2018/06/22/data-science-in-trading/</guid>
+      <description>    Episode 1   Data Science, Trading and Startup Methods Walk into a Bar    Your browser does not support the audio element.       </description>
     </item>
     
   </channel>

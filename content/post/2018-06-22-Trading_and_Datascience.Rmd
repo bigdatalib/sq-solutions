@@ -1,0 +1,39 @@
+---
+title: "Data Science in Trading"
+author: "Nima Safaian"
+date: 2018-06-22T23:41:14-05:00
+draft: false
+categories: ["R"]
+tags: ["blockchain", "energy","trading"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/logo.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+---
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<table class="sortable" cellpadding="0" cellspacing="0" border="0" style="width:60%;">
+
+<tr>
+<td><b>Episode 1</b></td>
+<td>Data Science, Trading and Startup Methods Walk into a Bar</td>
+<td> 
+<audio controls>
+<source src="./mp3/Ep1_CrossPoll_NSafaian.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+</audio>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
