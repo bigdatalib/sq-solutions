@@ -22,7 +22,7 @@ Very interesting article by HBR [What is you data strategy](https://hbr.org/2017
 
 New way of looking at Data Management. I specially like the departure from the single source of truth argument to MVOTs. 
 
-![Elements of Data](https://hbr.org/resources/images/article_assets/2018/05/VL180503_HT.png){ width=50% }
+![Elements of Data](https://hbr.org/resources/images/article_assets/2018/05/VL180503_HT.png){ width=70% }
 
 
 
