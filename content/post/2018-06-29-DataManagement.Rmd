@@ -1,0 +1,29 @@
+---
+title: "Elements of Data Strategy"
+author: "Nima Safaian"
+date: 2018-06-29T23:41:14-05:00
+draft: false
+categories: ["Data"]
+tags: ["Data", "Analytics","Strategy"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/logo.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+---
+
+## Elements of Data Strategy 
+
+Very interesting article by HBR [What is you data strategy](https://hbr.org/2017/05/whats-your-data-strategy)
+
+New way of looking at Data Management. I specially like the departure from the single source of truth argument to MVOTs. 
+
+![Elements of Data](https://hbr.org/resources/images/article_assets/2018/05/VL180503_HT.png)
+
+
+
+

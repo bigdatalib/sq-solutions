@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/sq-solutions/2018/06/22/blockchain-in-energy-trading/</loc>
-    <lastmod>2018-06-22T23:41:14-05:00</lastmod>
+    <loc>/sq-solutions/2018/06/29/elements-of-data-strategy/</loc>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/sq-solutions/2018/06/22/blockchain-in-energy-trading-2/</loc>
+    <loc>/sq-solutions/2018/06/22/blockchain-in-energy-trading/</loc>
     <lastmod>2018-06-22T23:41:14-05:00</lastmod>
   </url>
   
@@ -23,6 +23,12 @@
   </url>
   
   <url>
+    <loc>/sq-solutions/tags/analytics/</loc>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/sq-solutions/tags/blockchain/</loc>
     <lastmod>2018-06-22T23:41:14-05:00</lastmod>
     <priority>0</priority>
@@ -34,6 +40,18 @@
   </url>
   
   <url>
+    <loc>/sq-solutions/tags/data/</loc>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/sq-solutions/categories/data/</loc>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/sq-solutions/tags/energy/</loc>
     <lastmod>2018-06-22T23:41:14-05:00</lastmod>
     <priority>0</priority>
@@ -41,7 +59,7 @@
   
   <url>
     <loc>/sq-solutions/post/</loc>
-    <lastmod>2018-06-22T23:41:14-05:00</lastmod>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -53,13 +71,19 @@
   
   <url>
     <loc>/sq-solutions/</loc>
-    <lastmod>2018-06-22T23:41:14-05:00</lastmod>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/sq-solutions/tags/strategy/</loc>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/sq-solutions/tags/</loc>
-    <lastmod>2018-06-22T23:41:14-05:00</lastmod>
+    <lastmod>2018-06-29T23:41:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
