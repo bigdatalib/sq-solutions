@@ -1,7 +1,7 @@
 ---
-title: "Data Science in Trading"
+title: "Data Science in Trading - Cross-Pollination podcast"
 author: "Nima Safaian"
-date: 2018-06-22T23:41:14-05:00
+date: 2018-07-01T23:41:14-05:00
 draft: false
 categories: ["R"]
 tags: ["blockchain", "energy","trading"]
@@ -18,15 +18,4 @@ output:
 
 # Data Science in Energy Trading and Risk Management
 
-Trading and Data Science by Nima Safaian
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<audio controls>
-<source src="http://63.142.255.84/Ep1_CrossPoll_NSafaian.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-</audio>
-</body>
-</html>
+Check out my interview with Nbee in her [cross-pollination](http://crosspollination.co/) the web link to my Podcast is under [Data Science, Trading & Agile Walk into a Bar](http://crosspollination.co/2018/06/24/ep1-data-science-trading-agile-walk-into-a-bar-nima-safaian/)

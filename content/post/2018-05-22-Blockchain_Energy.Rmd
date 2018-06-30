@@ -1,10 +1,10 @@
 ---
-title: "Blockchain in Energy Trading"
+title: "Digital Disruption-Blockchain and AI in Energy Trading"
 author: "Nima Safaian"
-date: 2018-06-22T23:41:14-05:00
+date: 2018-06-30T23:41:14-05:00
 draft: false
 categories: ["R"]
-tags: ["blockchain", "energy","trading"]
+tags: ["blockchain", "energy","trading","AI"]
 thumbnailImagePosition: left
 thumbnailImage: ./images/logo.png
 metaAlignment: center
@@ -16,6 +16,7 @@ output:
     css: "/css/my-style.css"
 ---
 
-## Blockchain Chain in Energy Trading
+## Blockchain and AI in Energy Trading
 
+Fantastic whitepaper by [FIS Global](www.fisglobal.com) I was interviewed for parts of this report. The report is called [Digital Disruption in the North American Power and Gas Markets](http://empower1.fisglobal.com/rs/650-KGE-239/images/Digital-Disruption-in-the-North-American-Gas-and-Power-Markets-Report.pdf?mkt_tok=eyJpIjoiTTJZNVltRmlOakUyTkRJeCIsInQiOiI2enVZTzVadit3OVwvSlJtNm85SlVxdG9OMyt6SGgwbGN5UFVQM1lSTXJwcXJUUVZzNUJ1VDB1encwMmcxazVhRWJJRFN1SnRaNnltMnU0a0luTzRnNDZaWE5NVTN5MXY1YVV6dGhLOXlJc1MwY1wvelFiVHp0dUQzRklXa21WTlZ0In0%3D)
 
