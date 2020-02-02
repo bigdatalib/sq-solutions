@@ -1,0 +1,383 @@
+---
+title: "rstudio::conf 2020"
+author: "Nima Safaian"
+date: 2020-01-31T23:41:14-05:00
+draft: false
+categories: ["Data"]
+tags: ["Data", "Analytics","Strategy"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/logo.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+---
+
+## RStudio Conference 2020 Packages and Highlights and Random Packages and thoughts
+
+### Sortable 
+
+This was part of the poster session in the rstudio::conf() 2020. Great for drag and drop shiny objects from one bucket to other and capture the interaction in the server side. 
+
+![Sortable](https://github.com/rstudio/sortable/raw/master/man/figures/logo.svg?sanitize=true){ width=10% }
+[Sortable github page](https://rstudio.github.io/sortable/index.html)
+
+
+### End-to-End Data Science with Shiny, Plumber and Pins
+
+This was a presentation by Alex Gold (@alexgold) engineer from RStudio. The workflow makes it easier for dploymment and sharing models and input data. This is another way to make the entire process very reproduceable. The files for this presentation is located in [github](https://github.com/akgold/rsconf2020-deployment). 
+
+Noteworthy package here is pins:
+
+![](https://pins.rstudio.com/reference/figures/logo.png){ width=10% }
+
+The package library can be found in: [pins github directory](https://pins.rstudio.com/index.html)
+
+Setting up boards are easy in the git hub case you can use:
+
+```{r eval=FALSE, include=FALSE}
+library(pins)
+board_register_github(repo = "bigdatalib/data",token ="<token name>")
+```
+
+```{r include=FALSE}
+library(pins)
+board_register_github(repo = "bigdatalib/data",token ="28c96c0e5210e4777a24068127f15bc62b8b4160")
+```
+
+You can pin the data to your github board using the pin command as follows:
+
+```{r}
+pin(iris, description = "The iris data set", board = "github")
+```
+
+You can get the data back using:
+
+```{r}
+pin_get("iris", board = "github")
+```
+
+Or find the data in the board:
+
+```{r}
+pin_find("iris", board = "github")
+```
+
+**The rule is if the data is large (25M in github) and greater then 100M using rsconnect setup avoid using this.
+
+### Plumber Workflow
+
+![](https://github.com/rstudio/hex-stickers/blob/master/PNG/plumber-female.png?raw=true){ width=10% }
+
+Very well done presentation on how to develop and deploy plumber API with unit tests. Interesting use case for continues deployment from github directly to RStudio Connect. The code base is located under: [github](https://github.com/blairj09/ppp/) and slide decks for the talk are under: 
+[Slides](https://github.com/blairj09/ppp/blob/master/slides/slides.pdf)
+
+### Producing Reproducable Examples
+
+
+![](https://github.com/rstudio/hex-stickers/blob/master/PNG/reprex.png?raw=true){ width=10% }
+
+
+This package is used to generate reproducable examples for stackoverflow or github. Reprex R package is located under: [reprex](https://reprex.tidyverse.org/)
+
+```{r}
+require(reprex)
+(y <- 1:4)
+mean(y)
+```
+
+```{r}
+reprex()
+```
+
+
+### File System 
+
+fs package is cross platform file system access package. More user friendly version of the base R. The package location is: [fs](https://fs.r-lib.org/)
+
+
+### rmarkdown series of talks
+
+The first discussion by Atlas the full discussion in located under [ratlas](rhttps://www.wjakethompson.com/talk/2020-01-30-rstudioconf-ratlas/). The most interesting aspect of the talk was branded microsoft word branded documents. Interesting no discussion on google branded products from rmarkdown this could be idea for project **rgooglemarkdown???**
+
+
+
+### Debugging Keynote 
+
+Really interesting talk by Jenney Bryan from RStudio entertaining but useful tips full presentation is under: [debugging](https://github.com/jennybc/debugging#readme)
+
+### ggplot2 Discussions 
+
+Great presentation on ggplot2 [Slides](https://fishandwhistle.net/slides/rstudioconf2020/#1) but same information can be found in the tidyverse documentation [Link](https://ggplot2.tidyverse.org/dev/articles/ggplot2-in-packages.html)
+
+The focus of the presentation was around using ggplot within a function and package where input parameters need to become dynamics for generic functions.
+
+Use
+.data[["variable_name"]]
+within
+aes() and/or vars()
+
+ggplot(...) + item1 + item2
+is identical to
+ggplot(...) + list(item1, item2)
+Use it to conditinally more than one item to a plot!
+
+
+Example of passing the col name
+```{r eval=FALSE, include=TRUE}
+require(ggplot2)
+col_summary <- function(df, col) {
+  ggplot(df) + 
+    geom_bar(aes(x = {{ col }})) + 
+    coord_flip()
+}
+
+col_summary(mpg, drv)
+```
+
+Using the vars within the facet wrap to make it more dynamic
+
+```{r eval=FALSE, include=TRUE}
+#' @importFrom ggplot2 ggplot aes vars facet_wrap geom_point labs
+#'
+plot_mpg <- function(colour_var, facet_var) {
+  mapping <- aes(displ, hwy, colour = .data[[colour_var]])
+  if (is.null(colour_var)) {
+    mapping$colour <- NULL
+  }
+  if (is.null(facet_var)) {
+    facet <- NULL
+  } else {
+    facet <- facet_wrap(vars(.data[[facet_var]]))
+  }
+  ggplot(ggplot2::mpg) +
+    geom_point(mapping) +
+    facet
+}
+```
+
+### tidyr 
+
+
+![](https://github.com/rstudio/hex-stickers/blob/master/PNG/tidyr.png?raw=true){ width=10% }
+
+
+
+Not directly from the conference but there were bunch of discussions on new tidyr. Since I have been using tidyr the old way trying to explore the new functions. This is mainly using the Hadleys Sept 13 [blog post]( https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/)
+
+
++ pivot_longer() and pivot_wider() 
+
+```{r}
+require(tidyr)
+iris2<-iris %>% pivot_longer(
+  -dplyr::starts_with("Spe"),
+  names_to = c("Type"),
+  names_pattern = "(.*)"
+)
+iris2
+```
+```{r message=FALSE, warning=FALSE}
+tmp<-iris2 %>% dplyr::mutate(Species=as.character(Species),
+                        val=as.numeric(value)) %>%
+  dplyr::select(-value) %>%
+  pivot_wider(
+    names_from = c("Species"), 
+    values_from = val
+  ) 
+
+tmp
+
+tmp %>%  unnest(everything())
+
+```
+
+
++ unnest_auto(), unnest_longer(), unnest_wider(), and hoist() 
+
+```{r message=FALSE, warning=FALSE}
+tmp %>%  unnest_longer(setosa)
+```
+
+```{r message=FALSE, warning=FALSE}
+tmp %>%  unnest_wider(setosa)
+```
+
+```{r message=FALSE, warning=FALSE}
+tmp %>%  unnest_auto(setosa)
+```
+
+
+
++ nest() and unnest() moved to (pack()/unpack(), and chop()/unchop()) 
+```{r}
+df <- tibble(x1 = 1:3, x2 = 4:6, x3 = 7:9, y = 1:3)
+df
+df %>% pack(x = starts_with("x")) %>% unpack(x)
+
+```
+
+
++ new expand_grid()
+
+```{r}
+students <- tribble(
+  ~ school, ~ student,
+  "A",      "John",
+  "A",      "Mary",
+  "A",      "Susan",
+  "B",      "John"
+)
+expand_grid(students, semester = 1:2)
+```
+
+### slider 
+
+Great new package not yet in cran but simplifies and replaces some of the tibbletime functionality. Great for applications such as rolling sd and rolling correlation 
+
+Good write-up in the [slider](https://davisvaughan.github.io/slider/articles/slider.html) website simple example below:  
+
+
+
+```{r}
+library(slider)
+library(tidyverse)
+set.seed(123)
+df <- tibble(
+  y = rnorm(100),
+  x = rnorm(100)
+)
+out<-df %>% mutate(m=slide2_dbl(y,x,cor, .before = 19,.complete = T))
+
+tail(out)
+
+```
+
+
+
+### usethis
+
+There was a lot of discussions on usethis package for package building setup and deployment. The link to usethis package is here: [usethis](https://usethis.r-lib.org/index.html)
+
+There is also a good blogpost on the steps to setup a R package quickly: [Package blogpost](https://r-mageddon.netlify.com/post/writing-an-r-package-from-scratch/)
+
+### testthat 
+
+This was another workflow package which forces good software engineering. This will work in concert with usethis and other package building tools. Good write up by [Hadley](http://r-pkgs.had.co.nz/tests.html) and package library for [testthat](https://testthat.r-lib.org/)
+
+
+
+
+### scales 
+
+![Scales](https://scales.r-lib.org/reference/figures/logo.png){ width=10% }
+
+Presentation on the functionality of scales from [scale](https://scales.r-lib.org/). The [slides](https://www.danaseidel.com/rstudioconf2020#1) for this presentation highlight 5 areas of functionality for scales package.
+
++ transformation
++ bounds and rescaling 
++ breaks
++ labels
++ palettes
+
+A good usecase is to create custom transformation:
+
+
+```{r}
+require(scales)
+require(ggplot2)
+# use trans_new to build a new transformation
+dollar_log <- trans_new(
+  name = "dollar_log",
+  # extract a single element from another trans
+  trans = log10_trans()$trans, 
+  # or write your own custom functions
+  inverse = function(x) 10^(x), 
+  breaks = breaks_log(),
+  format = label_dollar()
+)
+```
+
+```{r}
+ggplot(diamonds, aes(y = price, x = carat)) + 
+  geom_hex() +
+  scale_y_continuous(trans = dollar_log) +
+  scale_x_log10()
+```
+
+or rescaling data:
+
+```{r}
+squish(c(-1, 0.5, 1, 2, NA), range = c(0, 1))
+discard(c(-1, 0.5, 1, 2, NA), range = c(0, 1))
+censor(c(-1, 0.5, 1, 2, NA), range = c(0, 1))
+```
+
+
+```{r}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width,
+  colour = Sepal.Length)) +
+  geom_point() + 
+  scale_color_continuous(limit = c(6, 8), oob = scales::squish)
+```
+
+
+### tidyeval
+
+Using tidyeval framework for metaprogramming in R. It is commonly used in tidyverse to apply data masking. There is good writeup and bookdown is uder [tidyevaluation](https://tidyeval.tidyverse.org/sec-why-how.html). 
+
+The new innovation here is tunnelling using brakets'
+
+
+```{r}
+
+require(tidyverse)
+
+mean_by1<-function(data,by,var) {
+  data %>% 
+    group_by(by) %>%
+    summarize(var:= mean(var))
+}
+ 
+#mean_by1(iris,Species,Petal.Width)
+
+mean_by<-function(data,by,var) {
+  data %>% 
+    group_by({{ by}}) %>%
+    summarize({{var}} := mean({{var}}))
+}
+ 
+mean_by(iris,Species,Petal.Width)
+
+```
+
+
+
+
+### Time series forecasting workshop
+
+This is for the next blogpost the github for the training sessions [github](https://github.com/rstudio-conf-2020/time-series-forecasting/blob/master/README.md)
+
+Text book is under [timeseries forecasting](https://otexts.com/fpp3/)
+
+### renv 
+
+[renv](https://rstudio.github.io/renv/articles/renv.html)
+
+### tidymodels/tune
+
+New blog post idea: [tidymodels/tune](https://tidymodels.github.io/tune/)
+
+
+### tfprobability
+
+New blogpost idea: [tfprobability](https://rstudio.github.io/tfprobability/)
+
+
+
+
+
+

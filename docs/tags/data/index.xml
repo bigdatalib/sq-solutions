@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data on Strategic Quantitative Solutions</title>
+    <title>Data on SQS</title>
     <link>/sq-solutions/tags/data/</link>
-    <description>Recent content in Data on Strategic Quantitative Solutions</description>
+    <description>Recent content in Data on SQS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Jun 2018 23:41:14 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jan 2020 23:41:14 -0500</lastBuildDate>
     
 	<atom:link href="/sq-solutions/tags/data/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>rstudio::conf 2020</title>
+      <link>/sq-solutions/2020/01/31/rstudioconf-2020/</link>
+      <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
+      
+      <guid>/sq-solutions/2020/01/31/rstudioconf-2020/</guid>
+      <description>RStudio Conference 2020 Packages and Highlights and Random Packages and thoughts Sortable This was part of the poster session in the rstudio::conf() 2020. Great for drag and drop shiny objects from one bucket to other and capture the interaction in the server side.
+Sortable github page
+ End-to-End Data Science with Shiny, Plumber and Pins This was a presentation by Alex Gold (@alexgold) engineer from RStudio. The workflow makes it easier for dploymment and sharing models and input data.</description>
+    </item>
     
     <item>
       <title>Elements of Data Strategy</title>

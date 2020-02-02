@@ -1,0 +1,35 @@
+---
+title: "Energy Forecasting"
+author: "Nima Safaian"
+date: 2020-02-07T23:41:14-05:00
+draft: false
+categories: ["Data"]
+tags: ["Data", "Analytics","Strategy"]
+thumbnailImagePosition: left
+thumbnailImage: ./images/logo.png
+metaAlignment: center
+disable_comments: true
+output:
+  blogdown::html_page:
+    toc: false
+    fig_width: 8
+    css: "/css/my-style.css"
+---
+
+## Models why do we need them?
+
+## Short Term Analytics 
+
+## Forecasting for Short Term Dynamics
+
+## Should we do price forecasting 
+
+## Long Term Modelling
+
+
+
+
+
+
+
+

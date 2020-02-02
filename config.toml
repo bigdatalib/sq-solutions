@@ -1,7 +1,7 @@
 baseurl = "https://bigdatalib.github.io/sq-solutions/"
 publishDir="docs"
 languageCode = "en-us"
-title = "Strategic Quantitative Solutions"
+title = "SQS"
 theme = "hugo-lithium-theme"
 googleAnalytics = ""
 disqusShortname = ""

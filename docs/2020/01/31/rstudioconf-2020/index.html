@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.36.1" />
+
+
+<title>rstudio::conf 2020 - SQS</title>
+<meta property="og:title" content="rstudio::conf 2020 - SQS">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/sq-solutions/css/fonts.css" media="all">
+<link rel="stylesheet" href="/sq-solutions/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/sq-solutions/" class="nav-logo">
+    <img src="/sq-solutions/images/sqs2.png"
+         width="250"
+         height="250"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/sq-solutions/about/">About</a></li>
+    
+    <li><a href="https://github.com/bigdatalib">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/nimers">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">10 min read</span>
+    
+
+    <h1 class="article-title">rstudio::conf 2020</h1>
+
+    
+    <span class="article-date">2020/01/31</span>
+    
+
+    <div class="article-content">
+      <link rel="stylesheet" href="/css/my-style.css" type="text/css" />
+
+
+<div id="rstudio-conference-2020-packages-and-highlights-and-random-packages-and-thoughts" class="section level2">
+<h2>RStudio Conference 2020 Packages and Highlights and Random Packages and thoughts</h2>
+<div id="sortable" class="section level3">
+<h3>Sortable</h3>
+<p>This was part of the poster session in the rstudio::conf() 2020. Great for drag and drop shiny objects from one bucket to other and capture the interaction in the server side.</p>
+<p><img src="https://github.com/rstudio/sortable/raw/master/man/figures/logo.svg?sanitize=true" alt="Sortable" style="width:10.0%" />
+<a href="https://rstudio.github.io/sortable/index.html">Sortable github page</a></p>
+</div>
+<div id="end-to-end-data-science-with-shiny-plumber-and-pins" class="section level3">
+<h3>End-to-End Data Science with Shiny, Plumber and Pins</h3>
+<p>This was a presentation by Alex Gold (<span class="citation">@alexgold</span>) engineer from RStudio. The workflow makes it easier for dploymment and sharing models and input data. This is another way to make the entire process very reproduceable. The files for this presentation is located in <a href="https://github.com/akgold/rsconf2020-deployment">github</a>.</p>
+<p>Noteworthy package here is pins:</p>
+<p><img src="https://pins.rstudio.com/reference/figures/logo.png" style="width:10.0%" /></p>
+<p>The package library can be found in: <a href="https://pins.rstudio.com/index.html">pins github directory</a></p>
+<p>Setting up boards are easy in the git hub case you can use:</p>
+<p>You can pin the data to your github board using the pin command as follows:</p>
+<pre class="r"><code>pin(iris, description = &quot;The iris data set&quot;, board = &quot;github&quot;)</code></pre>
+<p>You can get the data back using:</p>
+<pre class="r"><code>pin_get(&quot;iris&quot;, board = &quot;github&quot;)</code></pre>
+<pre><code>## # A tibble: 150 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+##  1          5.1         3.5          1.4         0.2 setosa 
+##  2          4.9         3            1.4         0.2 setosa 
+##  3          4.7         3.2          1.3         0.2 setosa 
+##  4          4.6         3.1          1.5         0.2 setosa 
+##  5          5           3.6          1.4         0.2 setosa 
+##  6          5.4         3.9          1.7         0.4 setosa 
+##  7          4.6         3.4          1.4         0.3 setosa 
+##  8          5           3.4          1.5         0.2 setosa 
+##  9          4.4         2.9          1.4         0.2 setosa 
+## 10          4.9         3.1          1.5         0.1 setosa 
+## # … with 140 more rows</code></pre>
+<p>Or find the data in the board:</p>
+<pre class="r"><code>pin_find(&quot;iris&quot;, board = &quot;github&quot;)</code></pre>
+<pre><code>## # A tibble: 1 x 4
+##   name  description       type  board 
+##   &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt; 
+## 1 iris  The iris data set table github</code></pre>
+<p>**The rule is if the data is large (25M in github) and greater then 100M using rsconnect setup avoid using this.</p>
+</div>
+<div id="plumber-workflow" class="section level3">
+<h3>Plumber Workflow</h3>
+<p><img src="https://github.com/rstudio/hex-stickers/blob/master/PNG/plumber-female.png?raw=true" style="width:10.0%" /></p>
+<p>Very well done presentation on how to develop and deploy plumber API with unit tests. Interesting use case for continues deployment from github directly to RStudio Connect. The code base is located under: <a href="https://github.com/blairj09/ppp/">github</a> and slide decks for the talk are under:
+<a href="https://github.com/blairj09/ppp/blob/master/slides/slides.pdf">Slides</a></p>
+</div>
+<div id="producing-reproducable-examples" class="section level3">
+<h3>Producing Reproducable Examples</h3>
+<p><img src="https://github.com/rstudio/hex-stickers/blob/master/PNG/reprex.png?raw=true" style="width:10.0%" /></p>
+<p>This package is used to generate reproducable examples for stackoverflow or github. Reprex R package is located under: <a href="https://reprex.tidyverse.org/">reprex</a></p>
+<pre class="r"><code>require(reprex)</code></pre>
+<pre><code>## Loading required package: reprex</code></pre>
+<pre class="r"><code>(y &lt;- 1:4)</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<pre class="r"><code>mean(y)</code></pre>
+<pre><code>## [1] 2.5</code></pre>
+<pre class="r"><code>reprex()</code></pre>
+<pre><code>## No input provided and clipboard is not available.</code></pre>
+<pre><code>## Rendering reprex...</code></pre>
+</div>
+<div id="file-system" class="section level3">
+<h3>File System</h3>
+<p>fs package is cross platform file system access package. More user friendly version of the base R. The package location is: <a href="https://fs.r-lib.org/">fs</a></p>
+</div>
+<div id="rmarkdown-series-of-talks" class="section level3">
+<h3>rmarkdown series of talks</h3>
+<p>The first discussion by Atlas the full discussion in located under <a href="rhttps://www.wjakethompson.com/talk/2020-01-30-rstudioconf-ratlas/">ratlas</a>. The most interesting aspect of the talk was branded microsoft word branded documents. Interesting no discussion on google branded products from rmarkdown this could be idea for project <strong>rgooglemarkdown???</strong></p>
+</div>
+<div id="debugging-keynote" class="section level3">
+<h3>Debugging Keynote</h3>
+<p>Really interesting talk by Jenney Bryan from RStudio entertaining but useful tips full presentation is under: <a href="https://github.com/jennybc/debugging#readme">debugging</a></p>
+</div>
+<div id="ggplot2-discussions" class="section level3">
+<h3>ggplot2 Discussions</h3>
+<p>Great presentation on ggplot2 <a href="https://fishandwhistle.net/slides/rstudioconf2020/#1">Slides</a> but same information can be found in the tidyverse documentation <a href="https://ggplot2.tidyverse.org/dev/articles/ggplot2-in-packages.html">Link</a></p>
+<p>The focus of the presentation was around using ggplot within a function and package where input parameters need to become dynamics for generic functions.</p>
+<p>Use
+.data[[“variable_name”]]
+within
+aes() and/or vars()</p>
+<p>ggplot(…) + item1 + item2
+is identical to
+ggplot(…) + list(item1, item2)
+Use it to conditinally more than one item to a plot!</p>
+<p>Example of passing the col name</p>
+<pre class="r"><code>require(ggplot2)
+col_summary &lt;- function(df, col) {
+  ggplot(df) + 
+    geom_bar(aes(x = {{ col }})) + 
+    coord_flip()
+}
+
+col_summary(mpg, drv)</code></pre>
+<p>Using the vars within the facet wrap to make it more dynamic</p>
+<pre class="r"><code>#&#39; @importFrom ggplot2 ggplot aes vars facet_wrap geom_point labs
+#&#39;
+plot_mpg &lt;- function(colour_var, facet_var) {
+  mapping &lt;- aes(displ, hwy, colour = .data[[colour_var]])
+  if (is.null(colour_var)) {
+    mapping$colour &lt;- NULL
+  }
+  if (is.null(facet_var)) {
+    facet &lt;- NULL
+  } else {
+    facet &lt;- facet_wrap(vars(.data[[facet_var]]))
+  }
+  ggplot(ggplot2::mpg) +
+    geom_point(mapping) +
+    facet
+}</code></pre>
+</div>
+<div id="tidyr" class="section level3">
+<h3>tidyr</h3>
+<p><img src="https://github.com/rstudio/hex-stickers/blob/master/PNG/tidyr.png?raw=true" style="width:10.0%" /></p>
+<p>Not directly from the conference but there were bunch of discussions on new tidyr. Since I have been using tidyr the old way trying to explore the new functions. This is mainly using the Hadleys Sept 13 <a href="https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/">blog post</a></p>
+<ul>
+<li>pivot_longer() and pivot_wider()</li>
+</ul>
+<pre class="r"><code>require(tidyr)</code></pre>
+<pre><code>## Loading required package: tidyr</code></pre>
+<pre class="r"><code>iris2&lt;-iris %&gt;% pivot_longer(
+  -dplyr::starts_with(&quot;Spe&quot;),
+  names_to = c(&quot;Type&quot;),
+  names_pattern = &quot;(.*)&quot;
+)
+iris2</code></pre>
+<pre><code>## # A tibble: 600 x 3
+##    Species Type         value
+##    &lt;fct&gt;   &lt;chr&gt;        &lt;dbl&gt;
+##  1 setosa  Sepal.Length   5.1
+##  2 setosa  Sepal.Width    3.5
+##  3 setosa  Petal.Length   1.4
+##  4 setosa  Petal.Width    0.2
+##  5 setosa  Sepal.Length   4.9
+##  6 setosa  Sepal.Width    3  
+##  7 setosa  Petal.Length   1.4
+##  8 setosa  Petal.Width    0.2
+##  9 setosa  Sepal.Length   4.7
+## 10 setosa  Sepal.Width    3.2
+## # … with 590 more rows</code></pre>
+<pre class="r"><code>tmp&lt;-iris2 %&gt;% dplyr::mutate(Species=as.character(Species),
+                        val=as.numeric(value)) %&gt;%
+  dplyr::select(-value) %&gt;%
+  pivot_wider(
+    names_from = c(&quot;Species&quot;), 
+    values_from = val
+  ) 
+
+tmp</code></pre>
+<pre><code>## # A tibble: 4 x 4
+##   Type         setosa     versicolor virginica 
+##   &lt;chr&gt;        &lt;list&gt;     &lt;list&gt;     &lt;list&gt;    
+## 1 Sepal.Length &lt;dbl [50]&gt; &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+## 2 Sepal.Width  &lt;dbl [50]&gt; &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+## 3 Petal.Length &lt;dbl [50]&gt; &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+## 4 Petal.Width  &lt;dbl [50]&gt; &lt;dbl [50]&gt; &lt;dbl [50]&gt;</code></pre>
+<pre class="r"><code>tmp %&gt;%  unnest(everything())</code></pre>
+<pre><code>## # A tibble: 200 x 4
+##    Type         setosa versicolor virginica
+##    &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
+##  1 Sepal.Length    5.1        7         6.3
+##  2 Sepal.Length    4.9        6.4       5.8
+##  3 Sepal.Length    4.7        6.9       7.1
+##  4 Sepal.Length    4.6        5.5       6.3
+##  5 Sepal.Length    5          6.5       6.5
+##  6 Sepal.Length    5.4        5.7       7.6
+##  7 Sepal.Length    4.6        6.3       4.9
+##  8 Sepal.Length    5          4.9       7.3
+##  9 Sepal.Length    4.4        6.6       6.7
+## 10 Sepal.Length    4.9        5.2       7.2
+## # … with 190 more rows</code></pre>
+<ul>
+<li>unnest_auto(), unnest_longer(), unnest_wider(), and hoist()</li>
+</ul>
+<pre class="r"><code>tmp %&gt;%  unnest_longer(setosa)</code></pre>
+<pre><code>## # A tibble: 200 x 4
+##    Type         setosa versicolor virginica 
+##    &lt;chr&gt;         &lt;dbl&gt; &lt;list&gt;     &lt;list&gt;    
+##  1 Sepal.Length    5.1 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  2 Sepal.Length    4.9 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  3 Sepal.Length    4.7 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  4 Sepal.Length    4.6 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  5 Sepal.Length    5   &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  6 Sepal.Length    5.4 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  7 Sepal.Length    4.6 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  8 Sepal.Length    5   &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  9 Sepal.Length    4.4 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+## 10 Sepal.Length    4.9 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+## # … with 190 more rows</code></pre>
+<pre class="r"><code>tmp %&gt;%  unnest_wider(setosa)</code></pre>
+<pre><code>## # A tibble: 4 x 53
+##   Type     ...1  ...2  ...3  ...4  ...5  ...6  ...7  ...8  ...9 ...10 ...11
+##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Sepal.…   5.1   4.9   4.7   4.6   5     5.4   4.6   5     4.4   4.9   5.4
+## 2 Sepal.…   3.5   3     3.2   3.1   3.6   3.9   3.4   3.4   2.9   3.1   3.7
+## 3 Petal.…   1.4   1.4   1.3   1.5   1.4   1.7   1.4   1.5   1.4   1.5   1.5
+## 4 Petal.…   0.2   0.2   0.2   0.2   0.2   0.4   0.3   0.2   0.2   0.1   0.2
+## # … with 41 more variables: ...12 &lt;dbl&gt;, ...13 &lt;dbl&gt;, ...14 &lt;dbl&gt;,
+## #   ...15 &lt;dbl&gt;, ...16 &lt;dbl&gt;, ...17 &lt;dbl&gt;, ...18 &lt;dbl&gt;, ...19 &lt;dbl&gt;,
+## #   ...20 &lt;dbl&gt;, ...21 &lt;dbl&gt;, ...22 &lt;dbl&gt;, ...23 &lt;dbl&gt;, ...24 &lt;dbl&gt;,
+## #   ...25 &lt;dbl&gt;, ...26 &lt;dbl&gt;, ...27 &lt;dbl&gt;, ...28 &lt;dbl&gt;, ...29 &lt;dbl&gt;,
+## #   ...30 &lt;dbl&gt;, ...31 &lt;dbl&gt;, ...32 &lt;dbl&gt;, ...33 &lt;dbl&gt;, ...34 &lt;dbl&gt;,
+## #   ...35 &lt;dbl&gt;, ...36 &lt;dbl&gt;, ...37 &lt;dbl&gt;, ...38 &lt;dbl&gt;, ...39 &lt;dbl&gt;,
+## #   ...40 &lt;dbl&gt;, ...41 &lt;dbl&gt;, ...42 &lt;dbl&gt;, ...43 &lt;dbl&gt;, ...44 &lt;dbl&gt;,
+## #   ...45 &lt;dbl&gt;, ...46 &lt;dbl&gt;, ...47 &lt;dbl&gt;, ...48 &lt;dbl&gt;, ...49 &lt;dbl&gt;,
+## #   ...50 &lt;dbl&gt;, versicolor &lt;list&gt;, virginica &lt;list&gt;</code></pre>
+<pre class="r"><code>tmp %&gt;%  unnest_auto(setosa)</code></pre>
+<pre><code>## # A tibble: 200 x 4
+##    Type         setosa versicolor virginica 
+##    &lt;chr&gt;         &lt;dbl&gt; &lt;list&gt;     &lt;list&gt;    
+##  1 Sepal.Length    5.1 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  2 Sepal.Length    4.9 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  3 Sepal.Length    4.7 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  4 Sepal.Length    4.6 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  5 Sepal.Length    5   &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  6 Sepal.Length    5.4 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  7 Sepal.Length    4.6 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  8 Sepal.Length    5   &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+##  9 Sepal.Length    4.4 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+## 10 Sepal.Length    4.9 &lt;dbl [50]&gt; &lt;dbl [50]&gt;
+## # … with 190 more rows</code></pre>
+<ul>
+<li>nest() and unnest() moved to (pack()/unpack(), and chop()/unchop())</li>
+</ul>
+<pre class="r"><code>df &lt;- tibble(x1 = 1:3, x2 = 4:6, x3 = 7:9, y = 1:3)
+df</code></pre>
+<pre><code>## # A tibble: 3 x 4
+##      x1    x2    x3     y
+##   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1     1     4     7     1
+## 2     2     5     8     2
+## 3     3     6     9     3</code></pre>
+<pre class="r"><code>df %&gt;% pack(x = starts_with(&quot;x&quot;)) %&gt;% unpack(x)</code></pre>
+<pre><code>## # A tibble: 3 x 4
+##       y    x1    x2    x3
+##   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1     1     1     4     7
+## 2     2     2     5     8
+## 3     3     3     6     9</code></pre>
+<ul>
+<li>new expand_grid()</li>
+</ul>
+<pre class="r"><code>students &lt;- tribble(
+  ~ school, ~ student,
+  &quot;A&quot;,      &quot;John&quot;,
+  &quot;A&quot;,      &quot;Mary&quot;,
+  &quot;A&quot;,      &quot;Susan&quot;,
+  &quot;B&quot;,      &quot;John&quot;
+)
+expand_grid(students, semester = 1:2)</code></pre>
+<pre><code>## # A tibble: 8 x 3
+##   school student semester
+##   &lt;chr&gt;  &lt;chr&gt;      &lt;int&gt;
+## 1 A      John           1
+## 2 A      John           2
+## 3 A      Mary           1
+## 4 A      Mary           2
+## 5 A      Susan          1
+## 6 A      Susan          2
+## 7 B      John           1
+## 8 B      John           2</code></pre>
+</div>
+<div id="slider" class="section level3">
+<h3>slider</h3>
+<p>Great new package not yet in cran but simplifies and replaces some of the tibbletime functionality. Great for applications such as rolling sd and rolling correlation</p>
+<p>Good write-up in the <a href="https://davisvaughan.github.io/slider/articles/slider.html">slider</a> website simple example below:</p>
+<pre class="r"><code>library(slider)
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.2.1     ✓ purrr   0.3.2
+## ✓ tibble  2.1.3     ✓ dplyr   0.8.3
+## ✓ readr   1.3.1     ✓ stringr 1.4.0
+## ✓ ggplot2 3.2.1     ✓ forcats 0.3.0</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>set.seed(123)
+df &lt;- tibble(
+  y = rnorm(100),
+  x = rnorm(100)
+)
+out&lt;-df %&gt;% mutate(m=slide2_dbl(y,x,cor, .before = 19,.complete = T))
+
+tail(out)</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##        y      x        m
+##    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1  1.36  -1.31  -0.141  
+## 2 -0.600  2.00  -0.204  
+## 3  2.19   0.601 -0.0799 
+## 4  1.53  -1.25  -0.154  
+## 5 -0.236 -0.611 -0.114  
+## 6 -1.03  -1.19  -0.00903</code></pre>
+</div>
+<div id="usethis" class="section level3">
+<h3>usethis</h3>
+<p>There was a lot of discussions on usethis package for package building setup and deployment. The link to usethis package is here: <a href="https://usethis.r-lib.org/index.html">usethis</a></p>
+<p>There is also a good blogpost on the steps to setup a R package quickly: <a href="https://r-mageddon.netlify.com/post/writing-an-r-package-from-scratch/">Package blogpost</a></p>
+</div>
+<div id="testthat" class="section level3">
+<h3>testthat</h3>
+<p>This was another workflow package which forces good software engineering. This will work in concert with usethis and other package building tools. Good write up by <a href="http://r-pkgs.had.co.nz/tests.html">Hadley</a> and package library for <a href="https://testthat.r-lib.org/">testthat</a></p>
+</div>
+<div id="scales" class="section level3">
+<h3>scales</h3>
+<div class="figure">
+<img src="https://scales.r-lib.org/reference/figures/logo.png" alt="Scales" style="width:10.0%" />
+<p class="caption">Scales</p>
+</div>
+<p>Presentation on the functionality of scales from <a href="https://scales.r-lib.org/">scale</a>. The <a href="https://www.danaseidel.com/rstudioconf2020#1">slides</a> for this presentation highlight 5 areas of functionality for scales package.</p>
+<ul>
+<li>transformation</li>
+<li>bounds and rescaling</li>
+<li>breaks</li>
+<li>labels</li>
+<li>palettes</li>
+</ul>
+<p>A good usecase is to create custom transformation:</p>
+<pre class="r"><code>require(scales)</code></pre>
+<pre><code>## Loading required package: scales</code></pre>
+<pre><code>## 
+## Attaching package: &#39;scales&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     discard</code></pre>
+<pre><code>## The following object is masked from &#39;package:readr&#39;:
+## 
+##     col_factor</code></pre>
+<pre class="r"><code>require(ggplot2)
+# use trans_new to build a new transformation
+dollar_log &lt;- trans_new(
+  name = &quot;dollar_log&quot;,
+  # extract a single element from another trans
+  trans = log10_trans()$trans, 
+  # or write your own custom functions
+  inverse = function(x) 10^(x), 
+  breaks = breaks_log(),
+  format = label_dollar()
+)</code></pre>
+<pre class="r"><code>ggplot(diamonds, aes(y = price, x = carat)) + 
+  geom_hex() +
+  scale_y_continuous(trans = dollar_log) +
+  scale_x_log10()</code></pre>
+<p><img src="/sq-solutions/post/2020-01-31-rstudioConf2020_files/figure-html/unnamed-chunk-19-1.png" width="768" /></p>
+<p>or rescaling data:</p>
+<pre class="r"><code>squish(c(-1, 0.5, 1, 2, NA), range = c(0, 1))</code></pre>
+<pre><code>## [1] 0.0 0.5 1.0 1.0  NA</code></pre>
+<pre class="r"><code>discard(c(-1, 0.5, 1, 2, NA), range = c(0, 1))</code></pre>
+<pre><code>## [1] 0.5 1.0  NA</code></pre>
+<pre class="r"><code>censor(c(-1, 0.5, 1, 2, NA), range = c(0, 1))</code></pre>
+<pre><code>## [1]  NA 0.5 1.0  NA  NA</code></pre>
+<pre class="r"><code>ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width,
+  colour = Sepal.Length)) +
+  geom_point() + 
+  scale_color_continuous(limit = c(6, 8), oob = scales::squish)</code></pre>
+<p><img src="/sq-solutions/post/2020-01-31-rstudioConf2020_files/figure-html/unnamed-chunk-21-1.png" width="768" /></p>
+</div>
+<div id="tidyeval" class="section level3">
+<h3>tidyeval</h3>
+<p>Using tidyeval framework for metaprogramming in R. It is commonly used in tidyverse to apply data masking. There is good writeup and bookdown is uder <a href="https://tidyeval.tidyverse.org/sec-why-how.html">tidyevaluation</a>.</p>
+<p>The new innovation here is tunnelling using brakets’</p>
+<pre class="r"><code>require(tidyverse)
+
+mean_by1&lt;-function(data,by,var) {
+  data %&gt;% 
+    group_by(by) %&gt;%
+    summarize(var:= mean(var))
+}
+ 
+#mean_by1(iris,Species,Petal.Width)
+
+mean_by&lt;-function(data,by,var) {
+  data %&gt;% 
+    group_by({{ by}}) %&gt;%
+    summarize({{var}} := mean({{var}}))
+}
+ 
+mean_by(iris,Species,Petal.Width)</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   Species    Petal.Width
+##   &lt;fct&gt;            &lt;dbl&gt;
+## 1 setosa           0.246
+## 2 versicolor       1.33 
+## 3 virginica        2.03</code></pre>
+</div>
+<div id="time-series-forecasting-workshop" class="section level3">
+<h3>Time series forecasting workshop</h3>
+<p>This is for the next blogpost the github for the training sessions <a href="https://github.com/rstudio-conf-2020/time-series-forecasting/blob/master/README.md">github</a></p>
+<p>Text book is under <a href="https://otexts.com/fpp3/">timeseries forecasting</a></p>
+</div>
+<div id="renv" class="section level3">
+<h3>renv</h3>
+<p><a href="https://rstudio.github.io/renv/articles/renv.html">renv</a></p>
+</div>
+<div id="tidymodelstune" class="section level3">
+<h3>tidymodels/tune</h3>
+<p>New blog post idea: <a href="https://tidymodels.github.io/tune/">tidymodels/tune</a></p>
+</div>
+<div id="tfprobability" class="section level3">
+<h3>tfprobability</h3>
+<p>New blogpost idea: <a href="https://rstudio.github.io/tfprobability/">tfprobability</a></p>
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/sq-solutions/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/sq-solutions/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

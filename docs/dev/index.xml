@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devs on SQS</title>
+    <link>/sq-solutions/dev/</link>
+    <description>Recent content in Devs on SQS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Feb 2020 23:41:14 -0500</lastBuildDate>
+    
+	<atom:link href="/sq-solutions/dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Energy Forecasting</title>
+      <link>/sq-solutions/dev/2020-02-07-forecasting/</link>
+      <pubDate>Fri, 07 Feb 2020 23:41:14 -0500</pubDate>
+      
+      <guid>/sq-solutions/dev/2020-02-07-forecasting/</guid>
+      <description>Models why do we need them?  Short Term Analytics  Forecasting for Short Term Dynamics  Should we do price forecasting  Long Term Modelling  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Strategic Quantitative Solutions</title>
+    <title>Tags on SQS</title>
     <link>/sq-solutions/tags/</link>
-    <description>Recent content in Tags on Strategic Quantitative Solutions</description>
+    <description>Recent content in Tags on SQS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 Jun 2018 23:41:14 -0500</lastBuildDate>
@@ -23,7 +23,7 @@
     <item>
       <title>Analytics</title>
       <link>/sq-solutions/tags/analytics/</link>
-      <pubDate>Fri, 29 Jun 2018 23:41:14 -0500</pubDate>
+      <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
       
       <guid>/sq-solutions/tags/analytics/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>Data</title>
       <link>/sq-solutions/tags/data/</link>
-      <pubDate>Fri, 29 Jun 2018 23:41:14 -0500</pubDate>
+      <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
       
       <guid>/sq-solutions/tags/data/</guid>
       <description></description>
@@ -59,7 +59,7 @@
     <item>
       <title>Strategy</title>
       <link>/sq-solutions/tags/strategy/</link>
-      <pubDate>Fri, 29 Jun 2018 23:41:14 -0500</pubDate>
+      <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
       
       <guid>/sq-solutions/tags/strategy/</guid>
       <description></description>
