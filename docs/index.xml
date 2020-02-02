@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SQS</title>
-    <link>/sq-solutions/</link>
+    <link>https://bigdatalib.github.io/sq-solutions/</link>
     <description>Recent content on SQS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 31 Jan 2020 23:41:14 -0500</lastBuildDate>
     
-	<atom:link href="/sq-solutions/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bigdatalib.github.io/sq-solutions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>rstudio::conf 2020</title>
-      <link>/sq-solutions/2020/01/31/rstudioconf-2020/</link>
+      <link>https://bigdatalib.github.io/sq-solutions/2020/01/31/rstudioconf-2020/</link>
       <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
       
-      <guid>/sq-solutions/2020/01/31/rstudioconf-2020/</guid>
+      <guid>https://bigdatalib.github.io/sq-solutions/2020/01/31/rstudioconf-2020/</guid>
       <description>RStudio Conference 2020 Packages and Highlights and Random Packages and thoughts Sortable This was part of the poster session in the rstudio::conf() 2020. Great for drag and drop shiny objects from one bucket to other and capture the interaction in the server side.
 Sortable github page
  End-to-End Data Science with Shiny, Plumber and Pins This was a presentation by Alex Gold (@alexgold) engineer from RStudio. The workflow makes it easier for dploymment and sharing models and input data.</description>
@@ -24,30 +24,30 @@ Sortable github page
     
     <item>
       <title>Data Science in Trading - Cross-Pollination podcast</title>
-      <link>/sq-solutions/2018/07/01/data-science-in-trading---cross-pollination-podcast/</link>
+      <link>https://bigdatalib.github.io/sq-solutions/2018/07/01/data-science-in-trading---cross-pollination-podcast/</link>
       <pubDate>Sun, 01 Jul 2018 23:41:14 -0500</pubDate>
       
-      <guid>/sq-solutions/2018/07/01/data-science-in-trading---cross-pollination-podcast/</guid>
+      <guid>https://bigdatalib.github.io/sq-solutions/2018/07/01/data-science-in-trading---cross-pollination-podcast/</guid>
       <description>Data Science in Energy Trading and Risk Management Check out my interview with Nbee in her cross-pollination the web link to my Podcast is under Data Science, Trading &amp;amp; Agile Walk into a Bar
  </description>
     </item>
     
     <item>
       <title>Digital Disruption-Blockchain and AI in Energy Trading</title>
-      <link>/sq-solutions/2018/06/30/digital-disruption-blockchain-and-ai-in-energy-trading/</link>
+      <link>https://bigdatalib.github.io/sq-solutions/2018/06/30/digital-disruption-blockchain-and-ai-in-energy-trading/</link>
       <pubDate>Sat, 30 Jun 2018 23:41:14 -0500</pubDate>
       
-      <guid>/sq-solutions/2018/06/30/digital-disruption-blockchain-and-ai-in-energy-trading/</guid>
+      <guid>https://bigdatalib.github.io/sq-solutions/2018/06/30/digital-disruption-blockchain-and-ai-in-energy-trading/</guid>
       <description>Blockchain and AI in Energy Trading Fantastic whitepaper by FIS Global I was interviewed for parts of this report. The report is called Digital Disruption in the North American Power and Gas Markets
  </description>
     </item>
     
     <item>
       <title>Elements of Data Strategy</title>
-      <link>/sq-solutions/2018/06/29/elements-of-data-strategy/</link>
+      <link>https://bigdatalib.github.io/sq-solutions/2018/06/29/elements-of-data-strategy/</link>
       <pubDate>Fri, 29 Jun 2018 23:41:14 -0500</pubDate>
       
-      <guid>/sq-solutions/2018/06/29/elements-of-data-strategy/</guid>
+      <guid>https://bigdatalib.github.io/sq-solutions/2018/06/29/elements-of-data-strategy/</guid>
       <description>Elements of Data Strategy Very interesting article by HBR What is you data strategy
 New way of looking at Data Management. I specially like the departure from the single source of truth argument to MVOTs.
 Elements of Data
@@ -56,10 +56,10 @@ Elements of Data
     
     <item>
       <title>About</title>
-      <link>/sq-solutions/about/</link>
+      <link>https://bigdatalib.github.io/sq-solutions/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>/sq-solutions/about/</guid>
+      <guid>https://bigdatalib.github.io/sq-solutions/about/</guid>
       <description>My name is Nima Safaian, financial professional, data scientist, and corporate entrepreneur. My passion is to help companies turn data and technology, into a strategic value driver. This is my blog, where I share my ideas and experiences with those interested. Please contact me via email at: nsafaian@rpanda.co if you want to further explore oppertunities.</description>
     </item>
     

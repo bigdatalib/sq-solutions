@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Strategy on SQS</title>
-    <link>/sq-solutions/tags/strategy/</link>
+    <link>https://bigdatalib.github.io/sq-solutions/tags/strategy/</link>
     <description>Recent content in Strategy on SQS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 31 Jan 2020 23:41:14 -0500</lastBuildDate>
     
-	<atom:link href="/sq-solutions/tags/strategy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bigdatalib.github.io/sq-solutions/tags/strategy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>rstudio::conf 2020</title>
-      <link>/sq-solutions/2020/01/31/rstudioconf-2020/</link>
+      <link>https://bigdatalib.github.io/sq-solutions/2020/01/31/rstudioconf-2020/</link>
       <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
       
-      <guid>/sq-solutions/2020/01/31/rstudioconf-2020/</guid>
+      <guid>https://bigdatalib.github.io/sq-solutions/2020/01/31/rstudioconf-2020/</guid>
       <description>RStudio Conference 2020 Packages and Highlights and Random Packages and thoughts Sortable This was part of the poster session in the rstudio::conf() 2020. Great for drag and drop shiny objects from one bucket to other and capture the interaction in the server side.
 Sortable github page
  End-to-End Data Science with Shiny, Plumber and Pins This was a presentation by Alex Gold (@alexgold) engineer from RStudio. The workflow makes it easier for dploymment and sharing models and input data.</description>
@@ -24,10 +24,10 @@ Sortable github page
     
     <item>
       <title>Elements of Data Strategy</title>
-      <link>/sq-solutions/2018/06/29/elements-of-data-strategy/</link>
+      <link>https://bigdatalib.github.io/sq-solutions/2018/06/29/elements-of-data-strategy/</link>
       <pubDate>Fri, 29 Jun 2018 23:41:14 -0500</pubDate>
       
-      <guid>/sq-solutions/2018/06/29/elements-of-data-strategy/</guid>
+      <guid>https://bigdatalib.github.io/sq-solutions/2018/06/29/elements-of-data-strategy/</guid>
       <description>Elements of Data Strategy Very interesting article by HBR What is you data strategy
 New way of looking at Data Management. I specially like the departure from the single source of truth argument to MVOTs.
 Elements of Data
