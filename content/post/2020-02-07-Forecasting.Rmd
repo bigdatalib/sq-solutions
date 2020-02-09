@@ -182,7 +182,7 @@ install.packages("TSstudio")
 ```
 
 #### Time Series Decomposition and seasonality
-```{r fff}
+```{r fff, message=FALSE, warning=FALSE}
 require(forecast)
 require(TSstudio)
 require(dplyr)
@@ -193,11 +193,11 @@ totalgasusagets <- ts(totalgasusage$value, start=c(2001, 1), end=c(2019, 11), fr
 
 Summary of the data.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ts_info(totalgasusagets)
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ts_plot(totalgasusagets,
         title = "US Monthly NG consumption",
         Xtitle="BCF",
@@ -211,7 +211,7 @@ Two types of seasonality pattens.
 + Single Seasonal Pattern - one factor dominates
 + Multiple Seasonal Pattern - could be occilationsa + seasonal pattern or in the case of electricity hourly seasonality and daily and monthly seasonality 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(forecast)
 ts_seasonal(totalgasusagets,type="normal")
 
@@ -240,13 +240,13 @@ $$Y=T*S*C*I$$
 In most forecasting methods the variation in the series remain constant over time which is the case for additive series. However, sometimes the variation increase with time this where we need apply transformation to the data. Popular transformations are log or box-cox.
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 totalgasusagets_lambda=BoxCox.lambda(totalgasusagets)
 df<-BoxCox(totalgasusagets,lambda = totalgasusagets_lambda)
 ts_plot(df)
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 df<-decompose(totalgasusagets)
 m<-plot(df)
 m
@@ -264,7 +264,7 @@ m
 
 Splitting
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 totalgasusagetspartition<-ts_split(totalgasusagets,sample.out = 12)
 train<-totalgasusagetspartition$train
 test<-totalgasusagetspartition$test
@@ -272,7 +272,7 @@ test<-totalgasusagetspartition$test
 
 Forecasting
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 m<-auto.arima(train)
 ```
 
@@ -291,7 +291,7 @@ What we are looking for:
 + Residual distribution - need to be generally normal and spread shows the potential error in the model
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 checkresiduals(m)
 ```
 
@@ -303,39 +303,39 @@ Scoring the forecast:
 + Mean absolute error (MAE)
 + Mean absolute Percentage error (MAPE)
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 f<-forecast(m,h=12)
 ```
 
 Accuracy is a relative metric what we are interested here is to understand if we get fairly consistent accuracy between training and test set. Overall 3% for MAPE is fairly good
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 accuracy(f,test)
 ```
 
 Now putting it all together we can see actual vs. forecast and fitted data to do visual inspection of the results.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 test_forecast(actual=totalgasusagets,forecast.obj = f,test = test)
 ```
 
 Another way to assess the quality of the forecast to look at how much of variation in the forecast result can be explained by the model vs. mean of the data set.
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 meansvalue<-naive(train,n=12)
 accuracy(meansvalue,test)
 ```
 
 Now finalize forecast 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 m_final<-auto.arima(totalgasusagets)
 f_final<-forecast(m_final,h=12)
 ```
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 plot_forecast(f_final,
               title="US Natural Gas Consumption forecast",
               Xtitle = "Year",
@@ -346,7 +346,7 @@ plot_forecast(f_final,
 
 We can use forecasting models to simulate values.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 fc_sim<-forecast_sim(model=m_final,h=50,n=100)
 ```
 
@@ -356,12 +356,12 @@ We can also compare different forecasting methods
 
 https://cran.r-project.org/web/packages/forecastHybrid/vignettes/forecast Hybrid.html
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 require(forecastHybrid)
 hm1 <- hybridModel(y = totalgasusagets, models = "aefnstz", weights = "equal", errorMethod = "MASE")
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 accuracy(hm1,individual = T)
 ```
 
@@ -384,7 +384,7 @@ The assumptions in OLS
 
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 df<-decompose(totalgasusagets)
 
 seasonal<-timetk::tk_tbl(df$seasonal,rename_index="date") %>% dplyr::rename(seasonal=value)
@@ -395,16 +395,17 @@ all<-values %>% dplyr::left_join(seasonal,by="date") %>%
   dplyr::left_join(trend,by="date") %>% na.omit()
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 m<-lm(values~seasonal+trend,data=all[1:200,])
 summary(m)
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 f<-forecast(m,newdata = all[200:215,],h = 20)
 f
 ```
-```{r}
+
+```{r message=FALSE, warning=FALSE}
 
 nall<-data.frame(f) %>% dplyr::rename(values=`Point.Forecast`)
 a<-all %>% dplyr::select(values) %>% bind_rows(nall) %>%
