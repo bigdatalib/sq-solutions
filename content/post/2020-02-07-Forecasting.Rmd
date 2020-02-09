@@ -93,7 +93,15 @@ knitr::include_graphics(c("https://bigdatalibopen.s3-us-west-2.amazonaws.com/blo
 + Forecast short term future. Congestion and shortage
 + Model for Scenario Analysis
 
-```{r}
+### Elements of S/D 
+
++ Sources (Production)
++ Sinks (Usage and Transformations)
++ Movement (Storage and Transportations)
++ Price Setting Methods and What is Marginal
+
+
+```{r echo=FALSE}
 require("visNetwork")
 nodes<-dplyr::tibble(id=1:3,
                   label=c("input","market","output"),
@@ -273,7 +281,7 @@ m<-auto.arima(train)
 + Residual Analysis - Quality of the model + fitted values in the training partition
 + Score forecast - How well model forecasts values
 
-residual : e = Yt- Y_hatt
+residual : $$e = Y_t- \bar{Y}_t$$
 
 What we are looking for:
 
@@ -290,16 +298,16 @@ checkresiduals(m)
 
 Scoring the forecast: 
 
-+ Mean Squred Error (MSE)
++ Mean Squared Error (MSE)
 + Root mean squared error (RMSE)
 + Mean absolute error (MAE)
-+ Mean absolute Precentage error (MAPE)
++ Mean absolute Percentage error (MAPE)
 
 ```{r}
 f<-forecast(m,h=12)
 ```
 
-Accuracy is a relative metric what we are interested here is to understand if we get fairly consistant accuracy between training and test set. Overall 3% for MAPE is fairly good
+Accuracy is a relative metric what we are interested here is to understand if we get fairly consistent accuracy between training and test set. Overall 3% for MAPE is fairly good
 
 ```{r}
 accuracy(f,test)
@@ -311,7 +319,7 @@ Now putting it all together we can see actual vs. forecast and fitted data to do
 test_forecast(actual=totalgasusagets,forecast.obj = f,test = test)
 ```
 
-Another way to assess the quality of the forecast to look at how much of variation in the forcast result can be explained by the model vs. mean of the data set.
+Another way to assess the quality of the forecast to look at how much of variation in the forecast result can be explained by the model vs. mean of the data set.
 
 
 ```{r}
@@ -336,7 +344,7 @@ plot_forecast(f_final,
               )
 ```
 
-We can use focasting models to simulate values.
+We can use forecasting models to simulate values.
 
 ```{r}
 fc_sim<-forecast_sim(model=m_final,h=50,n=100)
@@ -346,7 +354,7 @@ fc_sim<-forecast_sim(model=m_final,h=50,n=100)
 
 We can also compare different forecasting methods  
 
-https://cran.r-project.org/web/packages/forecastHybrid/vignettes/forecastHybrid.html
+https://cran.r-project.org/web/packages/forecastHybrid/vignettes/forecast Hybrid.html
 
 ```{r}
 require(forecastHybrid)
@@ -369,10 +377,10 @@ The most common estimation is OLS.
 The assumptions in OLS
 
 + the model coefficients follow a linear structure
-+ No prefect collinearity - one variable can not be linear combination of others
++ No prefect col-linearity - one variable can not be linear combination of others
 + Independent variable should not have zero variance
 + error term is a "normal distribution" with mu=0
-+ both independent and dependet variables draw from the population in a random sample
++ both independent and dependent variables draw from the population in a random sample
 
 
 
@@ -406,9 +414,11 @@ a %>% ggplot()+geom_line(aes(x=rowid,y=values,color="actual"),data=a[1:215,])+ge
 
 ```
 
-While this method can seem counter intutive and containing more steps but it provide a great deal of flexibility around independet variables. Forexample one can inlude additional regressors such as price in the model. Create sensitivity scenarios around some of the variables such as trend which will make the model good for both forcasting as well as explaining dynamics.  
+While this method can seem counter intuitive and containing more steps but it provide a great deal of flexibility around independent variables. Forexample one can include additional regressors such as price in the model. Create sensitivity scenarios around some of the variables such as trend which will make the model good for both forecasting as well as explaining dynamics.  
 
 There is a new package by Rami Krispin [forecastLM](https://github.com/RamiKrispin/forecastLM) - some of the concepts are also convered in his book [Hands-om Time-Series Analysis with R](https://www.amazon.ca/Hands-Time-Analysis-forecasting-visualization-ebook/dp/B07B41P2HZ)
+
+There is a fantastic corresponding blogpost [Introduction to the forecastLM package](https://ramikrispin.github.io/2020/02/introduction-to-the-forecastlm-package/) 
 
 
 
@@ -418,7 +428,7 @@ The key principles of long term forecasting according to [1] include:
 
 + **Implement a systematic approach** - This includes model driven forecasting. The models are generally grounded in reality and back tested but limited number of assumptions are relaxed and flexed in order to generate new forecasts
 
-+ **Document and Justify** - Formalizing rules and assumptions and systematic approach, Formal documentation and leniage allows for better forecast quality
++ **Document and Justify** - Formalizing rules and assumptions and systematic approach, Formal documentation and lineage allows for better forecast quality
 
 
 + **Systematic Evaluation of Forecasts** - Systematically evaluate forecasts and understand sources of errors and misses
@@ -429,11 +439,11 @@ The key principles of long term forecasting according to [1] include:
 There are number of approaches one can deploy for long term forecasting
 
 
-+ **Average of other forecasters** - If available and sufficently differring forecasts can be used to generate a new forecast. We can remove extreme cases and average number of suffeciently different forcasts to come up with a new forecast. Fair market value curves and forward curves are best estimate of value of an asset at any given time. Therefore, can be used to estimate the future value of an asset. 
++ **Average of other forecasters** - If available and sufficiently differing forecasts can be used to generate a new forecast. We can remove extreme cases and average number of sufficiently different forecasts to come up with a new forecast. Fair market value curves and forward curves are best estimate of value of an asset at any given time. Therefore, can be used to estimate the future value of an asset. 
 
-+ **Forecasting by Analogy** - We can use analogy of similar situation and similar context to come up with forecasts. This relies on studying historcial market dynamics in the same market and cross market. Understand if similar market fundmentals prevail what will be the price move. 
++ **Forecasting by Analogy** - We can use analogy of similar situation and similar context to come up with forecasts. This relies on studying historical market dynamics in the same market and cross market. Understand if similar market fundamental prevail what will be the price move. 
 
-+ **Scenario forecasting** - The best approach for forcasting the future since future is generally highly uncertain. Boundary scenarios are generally much easier to forecast. For example "market clearing mechanisims" in commodities markets. Event forecasts can also be used if key events in a market are known (e.g. infrastrucutte build). Since we can be left with large number of scenarios, it is useful to come up with likelihood of the event occuring. In this case beysian inference as well as statistical methods can be used to get the likelihood of scenarios. In developing market scenarios in depth knowledge of market dynamics is essential. Dimensionality reduction methods such as PCA/PCR are useful to reduce the degrees of freedom in the problem. e.g Forward curve moves can be classified as: Parallel shift, Steepening, and changes in seasonality.  
++ **Scenario forecasting** - The best approach for forecasting the future since future is generally highly uncertain. Boundary scenarios are generally much easier to forecast. For example "market clearing mechanisms" in commodities markets. Event forecasts can also be used if key events in a market are known (e.g. infrastructure build). Since we can be left with large number of scenarios, it is useful to come up with likelihood of the event occurring. In this case beysian inference as well as statistical methods can be used to get the likelihood of scenarios. In developing market scenarios in depth knowledge of market dynamics is essential. Dimensionality reduction methods such as PCA/PCR are useful to reduce the degrees of freedom in the problem. e.g Forward curve moves can be classified as: Parallel shift, Steepening, and changes in seasonality.  
 
 
 ### References
