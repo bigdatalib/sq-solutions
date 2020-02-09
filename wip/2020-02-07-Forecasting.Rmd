@@ -18,11 +18,73 @@ output:
 
 ## Models why do we need them?
 
-## Short Term Analytics 
+### Model Thinker and Many Model Approach
 
-## Forecasting for Short Term Dynamics
+*"Models are formal structures represented in mathematics and diagrams that help us to understand the world. Mastery of models improves your ability to reason, explain, design, communicate, act, predict and explore - The Model Thinker - Scott E. Page"* 
 
-## Should we do price forecasting 
+**Models are simply used to simplify complexity**
+
+```{r, echo=FALSE,fig.align="center",out.width="50%",fig.cap="The Model Thinker by - Scott E. Page"}
+knitr::include_graphics(c("modelThinker.png"))
+```
+
++ Models fall into general categories: 
+
+  1. Simplification of the world (e.g. Simple supply demand economic models).
+  2. Mathematical Analogies (e.g. Statistical Inference).
+  3. Exploratory Constructs (e.g. Outlier detection of complex data set).
++ Many Model Approach vs. Single Model Approach.
++ Models to Explain vs. Models to Predict (Beta hat vs. Y hat problems).
+
+## Analytics in the Data Age 
+
+*T. S. Eliot: “Where is the wisdom we have lost in knowledge? Where is the knowledge we have lost in information?”* 
+
+```{r, echo=FALSE,fig.align="center",out.width="50%",fig.cap="The Model Thinker by - Scott E. Page"}
+knitr::include_graphics(c("wisdomchart.png"))
+```
+  
+
+### Skills needed to transform market data into trading wisdom
+
+**Data**
+
++ Efficiency, Automation and Creativity.  
++ Curating the right data is the most time consuming part of process.
++ Establishing pipelines to many data-sets is key.
++ Agile approach to data - Use what you need but automate as you go.
+
+**Information**  
+
++ Data wrangling - 80/20 rule of data analysis.
++ Basic Statistics (mean,vol,skew,distribution).
++ Exploratory Data Visualization.
+
+**Knowledge**
+
++ Model building (from easy SD Models to Machine-learning)
++ Hypothesis Testing and Statistical Inference
++ Visual Analytic and Knowledge Sharing  
+
+**Wisdom** 
+
++ Turning models into action.
++ Knowing where to use which models.
++ Understanding the boundaries of models.
+
+
+
+
+## Modelling for Short Term Dynamics
+
+### Time Series Forecasting
+
+### Regression Forecasting
+
+
+## Can we forecast asset prices? 
+
+
 
 ## Long Term Modelling
 

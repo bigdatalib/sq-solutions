@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on SQS</title>
-    <link>https://bigdatalib.github.io/sq-solutions/tags/</link>
+    <link>/sq-solutions/tags/</link>
     <description>Recent content in Tags on SQS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 Jun 2018 23:41:14 -0500</lastBuildDate>
     
-	<atom:link href="https://bigdatalib.github.io/sq-solutions/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/sq-solutions/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ai</title>
-      <link>https://bigdatalib.github.io/sq-solutions/tags/ai/</link>
+      <link>/sq-solutions/tags/ai/</link>
       <pubDate>Sat, 30 Jun 2018 23:41:14 -0500</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/tags/ai/</guid>
+      <guid>/sq-solutions/tags/ai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Analytics</title>
-      <link>https://bigdatalib.github.io/sq-solutions/tags/analytics/</link>
-      <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
+      <link>/sq-solutions/tags/analytics/</link>
+      <pubDate>Fri, 07 Feb 2020 23:41:14 -0500</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/tags/analytics/</guid>
+      <guid>/sq-solutions/tags/analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blockchain</title>
-      <link>https://bigdatalib.github.io/sq-solutions/tags/blockchain/</link>
+      <link>/sq-solutions/tags/blockchain/</link>
       <pubDate>Sun, 01 Jul 2018 23:41:14 -0500</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/tags/blockchain/</guid>
+      <guid>/sq-solutions/tags/blockchain/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data</title>
-      <link>https://bigdatalib.github.io/sq-solutions/tags/data/</link>
-      <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
+      <link>/sq-solutions/tags/data/</link>
+      <pubDate>Fri, 07 Feb 2020 23:41:14 -0500</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/tags/data/</guid>
+      <guid>/sq-solutions/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Energy</title>
-      <link>https://bigdatalib.github.io/sq-solutions/tags/energy/</link>
+      <link>/sq-solutions/tags/energy/</link>
       <pubDate>Sun, 01 Jul 2018 23:41:14 -0500</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/tags/energy/</guid>
+      <guid>/sq-solutions/tags/energy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Strategy</title>
-      <link>https://bigdatalib.github.io/sq-solutions/tags/strategy/</link>
-      <pubDate>Fri, 31 Jan 2020 23:41:14 -0500</pubDate>
+      <link>/sq-solutions/tags/strategy/</link>
+      <pubDate>Fri, 07 Feb 2020 23:41:14 -0500</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/tags/strategy/</guid>
+      <guid>/sq-solutions/tags/strategy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Trading</title>
-      <link>https://bigdatalib.github.io/sq-solutions/tags/trading/</link>
+      <link>/sq-solutions/tags/trading/</link>
       <pubDate>Sun, 01 Jul 2018 23:41:14 -0500</pubDate>
       
-      <guid>https://bigdatalib.github.io/sq-solutions/tags/trading/</guid>
+      <guid>/sq-solutions/tags/trading/</guid>
       <description></description>
     </item>
     
